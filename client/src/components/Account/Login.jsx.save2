@@ -1,0 +1,69 @@
+import React, { Component } from 'react'
+import { AiOutlineClose } from 'react-icons/ai'
+
+export default class Login extends Component {
+  render() {
+    return (
+      <>
+        <div className='flex  grow items-center justify-center  mt-10'>
+          <div className=' w-[500px] border-2 border-black '>
+
+            {/* Login Heading */}
+            <div className=' flex items-center  px-4'>
+
+              {/* left part: close it */}
+              <div className='w-1/3'>
+                <div className='rounded-full h-6 w-6 flex items-center justify-center hover:bg-gray-100 '>
+                  <AiOutlineClose className='' />
+                </div>
+              </div>
+
+              {/* middle part: title */}
+              <div className='w-1/3 '>
+
+                <h1 className='text-center text-md font-poppin font-medium'>Login or Signup</h1>
+              </div>
+
+              {/* right part: nothing */}
+              <div className='w-1/3'>
+                <h1> </h1>
+              </div>
+            </div>
+            {/* End of Login head */}
+
+            <hr />
+
+            {/* Login components */}
+            <div className='mx-4 my-6 '>
+              <div className='mb-4'>
+                <h1 className='font-poppin text-lg'>Welcome to Airbnb</h1>
+              </div>
+
+              {/* login form */}
+              <form action="">
+                <div className='border-2 border-gray-200 rounded-lg'>
+                  <div className='mt-4px h-12 px-4 flex items-center '>
+                    <input type="text" placeholder='Country' className='w-full focus:outline-none' />
+                  </div>
+                  <hr />
+                  <div className='mt-4px h-12 px-4 flex items-center'>
+                    <input type="text" placeholder='phone number' className='w-full  focus:outline-none'/>
+                  </div>
+                </div>
+                <div className='text-xs mt-1'>
+                  <p>We’ll call or text you to confirm your number. Standard message and data rates apply. Privacy Policy</p>
+                </div>
+
+                <div className='full-w bg-red-500 mt-4 rounded-lg  h-10 flex items-center justify-center'>
+                  <button className='text-white text-center'>Continue</button>
+                </div>
+              </form>
+            </div>
+
+          </div>
+        </div>
+      </>
+
+    )
+  }
+}
