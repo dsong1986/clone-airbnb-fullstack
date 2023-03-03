@@ -9,30 +9,22 @@ import {
 import Header from './components/Layout/Header';
 import Login from './components/Account/Login';
 import Register from './components/Account/Register';
-
+import Layout from './components/Layout/Layout';
 
 export default function App() {
 
   return (
-  
+
     <>
-       <Router>
-        <Header />
+      <Router>
         <Routes>
-         
-        <Route exact path='/login'    element={<Login />} />
-        <Route exact path='/register' element={<Register />} />
-      
-          {/* <Route path="/details/:id"    element={<Details />} />
-      
-          <Route exact path='/account'  element={<Account />} />
-          <Route exact path='/register' element={<Register />} />
-          <Route exact path='/create'   element={<Create />} /> */}
-       
+          <Route path="/" element={<Layout />}>
+            <Route exact path='/login' element={<Login />} />
+            <Route exact path='/register' element={<Register />} />
+          </Route>
         </Routes>
-        {/* <Footer /> */}
       </Router>
-    
+
     </>
   )
 }

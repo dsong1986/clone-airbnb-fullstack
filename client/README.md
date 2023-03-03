@@ -33,6 +33,18 @@ https://daily-dev-tips.com/posts/using-google-fonts-in-a-tailwind-project/
 
 # ####################################################################################### #
 
+ ### git
+ create a new repository on the command line
+echo "# clone-airbnb-fullstack" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/dsong1986/clone-airbnb-fullstack.git
+git push -u origin main
+
+
+
 
  ### TODO Lists
  1. login page center the login componetn

@@ -4,7 +4,7 @@ export default class Login extends Component {
     render() {
         return (
             <>
-                <div className="mt-4  flex items-center justify-center py-10">
+                <div className="mt-4  grow flex items-top justify-center py-10">
                     <div className='w-1/2'>
                         <h1 className="text-4xl text-center">Login</h1>
 
