@@ -1,4 +1,8 @@
-# install vite  react-router-dom 
+# airbnb clone
+ this is danni‘s first full stack to clone airbnb website 
+
+## client side
+### install vite  react-router-dom 
     npm i vite
     npm i react-router-dom
     npm i react-icons
@@ -32,7 +36,6 @@ https://daily-dev-tips.com/posts/using-google-fonts-in-a-tailwind-project/
 # Outlet  react-dom-route
 refer to https://reactrouter.com/en/main/components/outlet
 
-# ####################################################################################### #
 
  ### git
  create a new repository on the command line
@@ -52,10 +55,8 @@ git push -u origin main
 ### Server Side
 # getting started
 1. node js express project
-```bash
 npm init
 npm install express
-```
 
 2. install axios (in the diretory of client)
 npm i axios
@@ -78,6 +79,9 @@ reference https://www.mongodb.com/docs/drivers/node/current/quick-start/connect-
 3 npm install bcrypt
 
  ### TODO Lists
+
+ 4. .env
+ refer to  https://www.npmjs.com/package/dotenv
 
  2. axios 
  install: npm install axios
