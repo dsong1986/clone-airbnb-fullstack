@@ -29,7 +29,8 @@ https://daily-dev-tips.com/posts/using-google-fonts-in-a-tailwind-project/
  refer to  https://tailwindcss.com/docs/adding-custom-styles
 
 
-
+# Outlet  react-dom-route
+refer to https://reactrouter.com/en/main/components/outlet
 
 # ####################################################################################### #
 
@@ -46,8 +47,24 @@ git push -u origin main
 
 
 
+
+
+### Server Side
+# getting started
+1. node js express project
+npm init
+npm install express
+
+2. install axios (in the diretory of client)
+npm i axios
+
+3. install CORS (server)
+npm install cors
+refer to https://www.npmjs.com/package/cors#simple-usage-enable-all-cors-requests
+
+
  ### TODO Lists
- 1. login page center the login componetn
 
  2. axios 
+ install: npm install axios
  refer to  https://reflectoring.io/tutorial-guide-axios/

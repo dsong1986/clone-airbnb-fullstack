@@ -10,6 +10,9 @@ import Header from './components/Layout/Header';
 import Login from './components/Account/Login';
 import Register from './components/Account/Register';
 import Layout from './components/Layout/Layout';
+import axios from 'axios';
+
+axios.defaults.baseURL='http://localhost:3005'
 
 export default function App() {
   return (
