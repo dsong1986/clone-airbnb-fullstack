@@ -6,18 +6,19 @@ const mongoose = require("mongoose");
 const bcrypt = require("bcrypt")
 const User = require("./model/user")
 const bodyParser = require("body-parser")
+const dotenv = require('dotenv')
+dotenv.config()
+
 
 app.use(bodyParser.urlencoded({
     extended: true
 }));
 
 
-
+// Connect to MongoDB
 mongoose.set('strictQuery', true);
+mongoose.connect(process.env.MONGODB_CONNECT_URL);
 
-// MongoDB DB
-const uri = "mongodb+srv://ststns:Dong1986@cluster0.8jcmsc0.mongodb.net/airbnb?retryWrites=true&w=majority"
-mongoose.connect(uri);
 const db = mongoose.connection;
 db.on("error", console.error.bind(console, "connection error: "));
 db.once("open", function () {

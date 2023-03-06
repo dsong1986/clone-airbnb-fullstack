@@ -1,8 +1,13 @@
 # airbnb clone
  this is danni‘s first full stack to clone airbnb website 
 
+<<<<<<< HEAD
 # client side
 # install vite  react-router-dom 
+=======
+## client side
+### install vite  react-router-dom 
+>>>>>>> 7e125f32b96b08de20fc1709d5ba69a01cc943dd
     npm i vite
     npm i react-router-dom
     npm i react-icons
