@@ -1,13 +1,13 @@
 # airbnb clone
  this is danni‘s first full stack to clone airbnb website 
 
-## client side
-### install vite  react-router-dom 
+# client side
+# install vite  react-router-dom 
     npm i vite
     npm i react-router-dom
     npm i react-icons
 
-# create a project with react vite and tailwindcss
+## create a project with react vite and tailwindcss
     refer to https://tailwindcss.com/docs/guides/vite
 
     npm create vite@latest client -- --template react
