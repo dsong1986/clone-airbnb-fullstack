@@ -63,6 +63,18 @@ npm install cors
 refer to https://www.npmjs.com/package/cors#simple-usage-enable-all-cors-requests
 
 
+## Database   -mongodb
+reference: https://www.mongodb.com/docs/drivers/node/current/quick-start/download-and-install/
+1. install: npm install mongodb (inside server directory)
+ npm install --global mongoosh
+
+2. connect
+mongodb+srv://ststns:<password>@cluster0.8jcmsc0.mongodb.net/?retryWrites=true&w=majority
+
+reference https://www.mongodb.com/docs/drivers/node/current/quick-start/connect-to-mongodb/
+
+3 npm install bcrypt
+
  ### TODO Lists
 
  2. axios 
