@@ -52,8 +52,10 @@ git push -u origin main
 ### Server Side
 # getting started
 1. node js express project
+```bash
 npm init
 npm install express
+```
 
 2. install axios (in the diretory of client)
 npm i axios
