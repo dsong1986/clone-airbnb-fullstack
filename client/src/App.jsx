@@ -12,9 +12,7 @@ import Register from './components/Account/Register';
 import Layout from './components/Layout/Layout';
 
 export default function App() {
-
   return (
-
     <>
       <Router>
         <Routes>

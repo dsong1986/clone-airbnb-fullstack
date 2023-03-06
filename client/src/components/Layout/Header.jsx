@@ -12,7 +12,7 @@ export default function Header() {
   // const {user} = useContext(UserContext);
   return (
     <>
-      <header className=" sticky top-0  shadow-md  bg-white">
+      <header className=" sticky top-0   bg-white">
         <div className="mx-10 h-20 flex">
 
           {/* left logo  */}
@@ -95,6 +95,7 @@ export default function Header() {
 
           </div>
         </div>
+        <hr />
       </header>
 
 
