@@ -54,10 +54,16 @@ mongodb+srv://ststns:<password>@cluster0.8jcmsc0.mongodb.net/?retryWrites=true&w
 
 reference https://www.mongodb.com/docs/drivers/node/current/quick-start/connect-to-mongodb/
 
+## jason web token (login)
+npm install jsonwebtoken
+refer to: https://www.npmjs.com/package/jsonwebtoken
+reference https://www.section.io/engineering-education/how-to-build-authentication-api-with-jwt-token-in-nodejs/
 
+## createContext & useContext
+refer to: https://dmitripavlutin.com/react-context-and-usecontext/
 
-
-
+## install cookie parser
+npm install cookie-parser
 
 # Others
 ## react snippets for Vs
@@ -86,6 +92,4 @@ refer to  https://www.npmjs.com/package/dotenv
 
 
 # Todo List
-
- 
- 2. 
+1. think about jwt

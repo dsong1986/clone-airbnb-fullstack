@@ -6,10 +6,10 @@ import { BiSearch } from 'react-icons/bi'
 import { AiOutlineMenu } from 'react-icons/ai'
 import { FaUserCircle } from 'react-icons/fa'
 import { RiGlobalLine } from 'react-icons/ri'
-
+import { UserContext } from "../Account/UserContext";
 
 export default function Header() {
-  // const {user} = useContext(UserContext);
+  const { user } = useContext(UserContext);
   return (
     <>
       <header className=" sticky top-0   bg-white">
@@ -82,15 +82,26 @@ export default function Header() {
 
 
             {/* Login */}
-            <Link to='/login' className="flex  w-20 items-center ml-6 cursor-pointer  ">
+            <Link to={user ? '/account' : '/login' }className="flex  w-20 items-center ml-6 cursor-pointer  ">
               <div className="flex rounded-full border-2 p-2 h-full  space-x-2  hover:shadow-lg">
                 <div className="items-center flex">
                   <AiOutlineMenu className='mr-1 cursor-pointer' />
                 </div>
-                <div className="items-center flex">
+                {!user && (
+                  <div className="items-center flex">
                   <FaUserCircle color="gray" fontSize='2em' className=' cursor-pointer' />
                 </div>
+                )
+
+                }
+                { user && (
+                  <div className="items-center flex">
+                    {user.username
+                    }
+                  </div>
+                )}
               </div>
+
             </Link>
 
           </div>

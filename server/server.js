@@ -7,12 +7,15 @@ const bcrypt = require("bcrypt")
 const User = require("./model/user")
 const bodyParser = require("body-parser")
 const dotenv = require('dotenv')
+const cookieParser = require('cookie-parser')
+const jwt = require('jsonwebtoken');
 dotenv.config()
 
-
+const jwtSecret='dshjfisdhfiue'
 app.use(bodyParser.urlencoded({
     extended: true
 }));
+app.use(cookieParser())
 
 
 // Connect to MongoDB
@@ -56,7 +59,49 @@ app.post('/register', async (req, res) => {
 
         res.status(500).json(error)
     }
+})
 
+app.post('/login', async(req, res) =>{
+    try {
+        const user = await User.findOne({ email: req.body.email })
+        //if no user
+        if(!user)   res.status(400).json("User not exist!")
+    
+        //if same user then compare password
+        else{
+            const validate = await bcrypt.compare(req.body.password, user.password)
+        
+            //if not validate
+           if(!validate) res.status(400).json("Wrong Password!")
+            else{
+                //send everything but password back 
+                const { password, ...other } = user._doc
+                // res.status(200).json(other)
+                jwt.sign({
+                    email:user.email, 
+                    id:user._id,
+                    name:user.username}, jwtSecret, {}, (err,token) => {
+                        if(err) throw err;
+                        res.cookie('token', token).json(other)
+                    })
+            }
+        }
+      } catch (error) {
+        res.status(500).json(error)
+      }
+})
+
+app.get('/profile', (req, res) => {
+    const {token} = req.cookies
+    if(token) {
+        jwt.verify(token, jwtSecret, {}, async (err, userData) => {
+            if(err) throw err;
+            const {username, email, _id} = await User.findById(userData.id);
+            res.json({username, email, _id});
+        })
+    }else{
+        res.json(null)
+    }
 })
 
 app.listen(port, () => console.log(`Listening on port ${port}`));

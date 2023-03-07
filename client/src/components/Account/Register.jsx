@@ -16,9 +16,9 @@ export default function Register() {
                 email,
                 password,
             });
-            console.log(response);
+            alert('Registraction successful. Now you can login')
         } catch (error) {
-            console.error(error);
+            alert('Registration failed, please change email and have another try')
         }
     }
     return (
@@ -46,7 +46,6 @@ export default function Register() {
                             <div className="text-center py-2 text-gray-500">
                                 Already a member?<Link className="underline text-black" to={'/login'}>Login now</Link>
                             </div>
-
                         </form>
                     </div>
                 </div>
