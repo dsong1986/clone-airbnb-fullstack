@@ -13,12 +13,12 @@ export default function Login() {
         ev.preventDefault();
 
         try {
-            const response = await axios.post('/login', {
+            const {data} = await axios.post('/login', {
                 email,
                 password,
             });
             // console.log(response)
-            setUser(response.data)
+            setUser(data)
             alert('Login successful')
             setRedirect(true)
         } catch (error) {
@@ -27,7 +27,6 @@ export default function Login() {
     }
 
     // if login, redirect
-
     if (redirect) {
         return <Navigate to={'/'} />
     }
