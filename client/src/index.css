@@ -12,3 +12,23 @@ button.primary {
     background-color: #F5385D;
     @apply  p-2 w-full text-white rounded-2xl
 }
+
+.bg-primary{
+    background-color: #F5385D;
+}
+
+.title {
+    @apply text-4xl font-poppin
+}
+
+h1 {
+    @apply text-2xl font-poppin font-normal
+}
+
+h2 {
+    @apply text-lg font-poppin 
+}
+
+h3 {
+    @apply text-[16px] font-poppin font-extralight
+}

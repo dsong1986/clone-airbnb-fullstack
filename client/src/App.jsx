@@ -12,9 +12,11 @@ import Register from './components/Account/Register';
 import Layout from './components/Layout/Layout';
 import Index from './components/Pages/Index';
 import Account from './components/Account/Account'
+import HostAPlace from './components/Host/HostAPlace';
+
 import axios from 'axios';
 import { UserContextProvider } from './components/Account/UserContext';
-
+import HostPage from './components/Host/HostPage';
 axios.defaults.baseURL='http://localhost:3005'
 axios.defaults.withCredentials = true
 
@@ -30,6 +32,8 @@ export default function App() {
             <Route exact path='/register' element={<Register />} />
             <Route exact path='/account' element={<Account />} />
             <Route exact path='/account/:subpage?' element={<Account />} />
+            <Route exact path='/hosting' element={<HostPage />} />
+            <Route exact path='/become-a-host/:placeId' element={<HostAPlace />} />
           </Route>
         </Routes>
       </Router>

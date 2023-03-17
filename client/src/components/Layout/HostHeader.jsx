@@ -23,42 +23,6 @@ export default function Header() {
           </div>
 
 
-          {/* middle search  */}
-          <div className="w-full min-w-[400px] md:w-[400px] py-4">
-            <div className="search items-center px-5 ">
-              <div className="searchArea flex rounded-full h-12 border border-gray-300  ">
-
-                <span className="w-1/4  items-center flex pl-2">
-                  <div className="px-2 text-sm">Anywhere
-                  </div>
-                </span>
-
-                <span className=" items-center flex">
-                  <div className="border-l h-5 border-gray-300"> </div>
-                </span>
-
-                <span className="w-1/4  items-center flex pl-2">
-                  <div className="px-2 text-sm">Any week
-                  </div>
-                </span>
-
-                <span className=" items-center flex">
-                  <div className="border-l h-5 border-gray-300"> </div>
-                </span>
-
-                <span className="w-1/3  items-center flex pl-2">
-                  <div className="px-2 text-sm text-gray-500">Add guest
-                  </div>
-                </span>
-
-                <span className="items-center flex">
-                  <BiSearch className="hidden md:inline-flex h-8 w-8 bg-red-400 text-white rounded-full p-2 cursor-pointer md:mx-2" />
-                </span>
-              </div>
-            </div>
-          </div>
-
-
 
           {/* right login  */}
           <div className="flex justify-end w-1/3 justify-end w-1/3  py-5  md:w-[500px]  hidden md:inline-flex ">
