@@ -13,8 +13,7 @@ import axios from 'axios'
 
 export default function HostPage() {
     const { user, ready } = useContext(UserContext)
-    // console.log(user)
-    let listId
+  
    
     if (!ready) {
         return 'Loading...'
@@ -30,19 +29,18 @@ export default function HostPage() {
         ev.preventDefault();
       
         try {
-            const userId = user._id
-            const {data} = await axios.post('/postNewListing', {
-                user,
-            });
+            // const userId = user._id
+            // const {data} = await axios.post('/postNewListing', {
+            //     user,
+            // });
       
-            listId=data
+            const listId='111' //data
             let path = '/become-a-host/:'
             path += listId
             navigate(path)
         } catch (error) {
             alert('fail to create a new list')
         }
-
      
     }
     return (

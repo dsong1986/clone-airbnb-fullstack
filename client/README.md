@@ -43,6 +43,9 @@ refer to https://www.npmjs.com/package/cors#simple-usage-enable-all-cors-request
 
 4. npm install bcrypt (for password )
 
+5. image downloader
+refer to https://www.npmjs.com/package/image-downloader
+
 
 ## Database   -mongodb
 reference: https://www.mongodb.com/docs/drivers/node/current/quick-start/download-and-install/

@@ -2,7 +2,6 @@ import { Link } from "react-router-dom";
 import { useContext } from "react";
 import logo from '../../../public/images/logo.png'
 import { BiSearch } from 'react-icons/bi'
-// import { BsGlobe } from 'react-icons/bs'
 import { AiOutlineMenu } from 'react-icons/ai'
 import { FaUserCircle } from 'react-icons/fa'
 import { RiGlobalLine } from 'react-icons/ri'

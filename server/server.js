@@ -10,14 +10,16 @@ const bodyParser = require("body-parser")
 const dotenv = require('dotenv')
 const cookieParser = require('cookie-parser')
 const jwt = require('jsonwebtoken');
+const download = require('image-downloader');
 dotenv.config()
+
 
 const jwtSecret = 'dshjfisdhfiue'
 app.use(bodyParser.urlencoded({
     extended: true
 }));
 app.use(cookieParser())
-
+app.use('/uploads', express.static(__dirname+'/uploads'))
 
 // Connect to MongoDB
 mongoose.set('strictQuery', true);
@@ -125,8 +127,16 @@ app.post('/postNewListing', async (req, res) => {
     } catch (error) {
         res.status(500).json(error)
     }
+})
 
-
+app.post('/upload-by-link', async(req, res) => {
+    const {link} = req.body
+    const photoNewName = 'photo_' + Date.now()+'.jpg'
+    await download.image({  
+        url:link,
+        dest:__dirname+'/uploads/'+photoNewName
+    })
+    res.json(photoNewName)
 })
 
 app.listen(port, () => console.log(`Listening on port ${port}`));
