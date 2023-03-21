@@ -95,7 +95,7 @@ export default function Header() {
 
                 }
                 { user && (
-                  <div className="items-center flex">
+                  <div className="items-center flex w-[100px]">
                     {user.username
                     }
                   </div>

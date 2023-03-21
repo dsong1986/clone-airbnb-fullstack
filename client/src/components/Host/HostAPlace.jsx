@@ -4,6 +4,9 @@ import { IoCloudUploadOutline } from 'react-icons/io5'
 import Perks from './Perks';
 import Time from './Time';
 import axios from 'axios';
+import { loadGetInitialProps } from 'next/dist/shared/lib/utils';
+import { v4 } from 'uuid'
+
 
 export default function HostAPlace() {
   const { placeId } = useParams();
@@ -23,13 +26,31 @@ export default function HostAPlace() {
 
   async function addPhotoByLink(ev) {
     ev.preventDefault()
+    if(photoLink.length>0){
     const { data: fileName } = await axios.post('/upload-by-link', { link: photoLink })
 
     setAddedPhotos(prev => {
       return [...prev, fileName]
-    })
+    })}
     setPhotoLink('')
   }
+
+ async function uploadPhoto(ev) {
+    ev.preventDefault()
+    const files = ev.target.files;
+    let formData = new FormData()
+    formData.append('myFile', files[0])
+ 
+    const { data: fileName } =await  axios.post('/upload', formData, {
+      headers: {
+        "Content-Type": "multipart/form-data",
+      }
+    })
+    setAddedPhotos(prev => {
+      return [...prev, fileName]
+    })
+  }
+
   return (
     <div className='lg:mx-60 px-20 mt-10 w-auto'>
       <form action="">
@@ -65,24 +86,25 @@ export default function HostAPlace() {
             />
             <button
               onClick={addPhotoByLink}
-              className=' w-[120px] bg-gray-200 rounded-full text-sm font-semibold px-1  hover:border-2 border-black hover:bg-white'>Add photos</button>
+              className=' w-[120px] bg-gray-200 rounded-full text-sm font-semibold px-1  hover:border-2 border-black hover:bg-white'>
+              Add photos
+            </button>
           </div>
           <div className='grid mt-2 grid-cols-2 md:grid-cols-3 gap-2 lg:grid-cols-4 '>
             {addedPhotos.length > 0 && addedPhotos.map(item => (
 
-              <div className='items-center justify-center'>
+              <div key={v4()} className='items-center justify-center'>
                 <img src={imgFolder + item} alt="" className='object-cover h-40 w-48 rounded-2xl' />
               </div>
             ))
             }
-
-            <button className='border bg-transparent rounded-2xl p-8 text-2xl font-poppin text-gray-600 h-40 w-48'>
-              <div className='flex space-x-2 items-center justify-center '>
-                {/* <IoCloudUploadOutline size={50}/> */}
+            <div>
+              <label className='flex space-x-2 items-center justify-center  border bg-transparent rounded-2xl p-8 text-2xl font-poppin text-gray-600 h-40 w-48'>
+                <input type="file" multiple className="hidden" onChange={uploadPhoto} />
                 <div><IoCloudUploadOutline size={20} /></div>
                 <h4>Upload</h4>
-              </div>
-            </button>
+              </label>
+            </div>
           </div>
         </div>
         {/* <div className='mb-5'>

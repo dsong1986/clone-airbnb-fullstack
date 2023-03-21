@@ -13,7 +13,8 @@ const jwt = require('jsonwebtoken');
 const download = require('image-downloader');
 dotenv.config()
 
-
+const fileupload = require('express-fileupload')
+app.use(fileupload())
 const jwtSecret = 'dshjfisdhfiue'
 app.use(bodyParser.urlencoded({
     extended: true
@@ -129,6 +130,7 @@ app.post('/postNewListing', async (req, res) => {
     }
 })
 
+// Upload a pic by link
 app.post('/upload-by-link', async(req, res) => {
     const {link} = req.body
     const photoNewName = 'photo_' + Date.now()+'.jpg'
@@ -138,5 +140,18 @@ app.post('/upload-by-link', async(req, res) => {
     })
     res.json(photoNewName)
 })
+
+// Upload a pic from local to server
+app.post('/upload', (req, res) => {
+    const originFile = req.files.myFile
+    const photoNewName = 'photo_' + Date.now()+'.jpg'
+    const path = __dirname + '/uploads/' + photoNewName
+    originFile.mv(path, function(err){
+        if (err)
+        return res.status(500).send(err);
+    })
+
+    res.json(photoNewName)
+  })
 
 app.listen(port, () => console.log(`Listening on port ${port}`));
